@@ -1,3 +1,5 @@
+Menus = new MysqlSubscription('allMenus');
+
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('counter', 0);
@@ -17,14 +19,12 @@ if (Meteor.isClient) {
 
   Template.menus.helpers({
     menus: function() {
-      return menus.reactive();
+      return Menus.reactive();
     }
   })
 
   Meteor.subscribe('allMenus');
 }
-
-menus = new MysqlSubscription('allMenus');
 
 if (Meteor.isServer) {
 
