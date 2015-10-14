@@ -1,3 +1,4 @@
+// MySQL
 var oddleDb = new LiveMysql({
   host: 'beta.cklvyeszoqj3.ap-southeast-1.rds.amazonaws.com',
   port: 3306,
@@ -6,8 +7,12 @@ var oddleDb = new LiveMysql({
   database: 'oddlefnb'
 });
 
+// PostgresQL
+var feastbumpDb = new LivePg("postgres://feastbump:feastbump_rocks@feastbump-db.cklvyeszoqj3.ap-southeast-1.rds.amazonaws.com/feastbump_production", "CHANNEL");
+
 var closeAndExit = function() {
   oddleDb.end();
+  feastbumpDb.cleanup(process.exit);
   process.exit();
 };
 // Close connections on hot code push
@@ -21,6 +26,11 @@ Meteor.publish('allMenus', function() {
     [ { table: 'menu' } ]
   );
 });
+
+Meteor.publish('allAffiliates', function(){
+  return feastbumpDb.select('SELECT * FROM affiliates');
+});
+
 
 Meteor.startup(function () {
   // code to run on server at startup

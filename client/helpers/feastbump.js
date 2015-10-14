@@ -4,5 +4,12 @@ Template.menus.helpers({
   }
 })
 
+Template.affiliates.helpers({
+  affiliates: function() {
+    return Affiliates.reactive();
+  }
+})
+
 
 Meteor.subscribe('allMenus');
+Meteor.subscribe('allAffiliates');
