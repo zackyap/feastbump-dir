@@ -1,3 +1,5 @@
+Template.applicationLayout.helpers()
+
 Template.menus.helpers({
   menus: function() {
     return Menus.reactive();
@@ -11,5 +13,5 @@ Template.affiliates.helpers({
 })
 
 
-Meteor.subscribe('allMenus');
-Meteor.subscribe('allAffiliates');
+// Meteor.subscribe('allMenus');
+// Meteor.subscribe('allAffiliates');
