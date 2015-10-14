@@ -1,0 +1,16 @@
+<template name="menus">
+  <h1>Welcome to FeastBump Menus!</h1>
+  <ul class="menus">
+    {{#each menus}}
+      {{> menu}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="menu">
+  <li class="menu">
+    <div class="menu-name">
+      {{name}}
+    </div>
+  </li>
+</template>
