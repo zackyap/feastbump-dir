@@ -1,0 +1,41 @@
+<head>
+  <title>Feastbump</title>
+</head>
+
+<body>
+  <h1>Welcome to FeastBump!</h1>
+  {{> affiliates}}
+  {{> menus}}
+</body>
+
+<template name="menus">
+  <ul class="menus">
+    {{#each menus}}
+      {{> menu}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="menu">
+  <li class="menu">
+    <div class="menu-name">
+      {{name}}
+    </div>
+  </li>
+</template>
+
+<template name="affiliates">
+  <ul class="affiliates">
+    {{#each affiliates}}
+      {{> affiliate}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="affiliate">
+  <li class="affiliate">
+    <div class="affiliate-name">
+      {{name}}
+    </div>
+  </li>
+</template>
