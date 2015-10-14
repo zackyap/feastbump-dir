@@ -1,8 +1,7 @@
-
 *.pem
 
 # mup.json has custom variables (.pem file location and app dir location)
 mup.json
 
-# server env variables should not be commited
+# server env variables should not be committed
 settings.json
