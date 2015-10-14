@@ -1,1 +1,5 @@
 local
+*.pem
+
+// Ignore Meteor Up Settings. Contains custom variables for each individual machine.
+mup.json
